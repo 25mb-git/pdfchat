@@ -47,6 +47,9 @@ Follow the instructions to install Ollama here: [Ollama GitHub Repository](https
 The application has been successfully deployed on an 8GB Mac Mini. Access the live demo here:
 https://mac-mini.boga-vector.ts.net/mistral
 
+Read more about how to deploy in this Medium Post: https://medium.com/@25mb.git/deploying-mistral-7b-on-a-budget-friendly-mac-mini-with-reverse-proxy-using-tailserver-6bae3cb69365
+
+
 ## Technologies Used
 
 Mistral 7B: Lightweight, open-weight LLM optimized for local deployment.
