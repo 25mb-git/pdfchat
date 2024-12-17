@@ -18,7 +18,6 @@ from langchain_community.vectorstores.faiss import FAISS
 import streamlit as st
 from streamlit.runtime.scriptrunner import get_script_run_ctx
 
-
 FILE_FOLDER = './files'
 
 def _get_session():
@@ -143,7 +142,7 @@ if __name__ == "__main__":
         st.session_state['prev_doc'] = ""
 
     # Upload a PDF file
-    uploaded_file = st.file_uploader("Upload your PDF", type='pdf')
+    uploaded_file = st.file_uploader("Upload your PDF(s). Support multiple pdfs", type='pdf')
 
     for message in st.session_state.chat_history:
         with st.chat_message(message["role"]):
