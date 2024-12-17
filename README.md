@@ -1,6 +1,6 @@
-# Local PDF Chat Application with Mistral 7B LLM, LangChain, Ollama, FAISS DB, and Streamlit
+# Multiple Files - PDF Chat Application with Mistral 7B LLM, LangChain, Ollama, FAISS DB, and Streamlit
 
-This application enables users to interact with PDF documents using a locally deployed **Mistral 7B** language model. By leveraging **LangChain**, **FAISS** vector database, and **Retrieval-Augmented Generation (RAG)**, it efficiently retrieves relevant document content and provides contextually accurate responses grounded strictly within the uploaded PDFs.
+This application enables users to interact with **Multiple** PDF documents using a locally deployed **Mistral 7B** language model. By leveraging **LangChain**, **FAISS** vector database, and **Retrieval-Augmented Generation (RAG)**, it efficiently retrieves relevant document content and provides contextually accurate responses grounded strictly within the uploaded PDFs.
 
 The system supports the ingestion of multiple documents, and each browser reload initiates a **private session**, ensuring that users can interact exclusively with their specific uploaded documents.
 
