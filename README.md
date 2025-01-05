@@ -1,6 +1,11 @@
-# Multiple Files - PDF Chat Application with Mistral 7B LLM, LangChain, Ollama, FAISS DB, and Streamlit
+# Improved version
+This application improves on the problems of the forked version.
+(reported in https://github.com/SonicWarrior1/pdfchat/issues/7#issuecomment-2547580815)
+- **Multiple Users**: Each user session has its own workspace
+- **Multiple Files**: Multiple files can be uploaded
 
-This application enables users to interact with **Multiple** PDF documents using a locally deployed **Mistral 7B** language model. By leveraging **LangChain**, **FAISS** vector database, and **Retrieval-Augmented Generation (RAG)**, it efficiently retrieves relevant document content and provides contextually accurate responses grounded strictly within the uploaded PDFs.
+# Multiple Files, Multiple Users - PDF Chat Application with Mistral 7B LLM, LangChain, Ollama, FAISS DB, and Streamlit
+Enables users to interact with **Multiple** PDF documents using a locally deployed **Mistral 7B** language model. By leveraging **LangChain**, **FAISS** vector database, and **Retrieval-Augmented Generation (RAG)**, it efficiently retrieves relevant document content and provides contextually accurate responses grounded strictly within the uploaded PDFs.
 
 The system supports the ingestion of multiple documents, and each browser reload initiates a **private session**, ensuring that users can interact exclusively with their specific uploaded documents.
 
@@ -44,7 +49,7 @@ Follow the instructions to install Ollama here: [Ollama GitHub Repository](https
 
 ## Demo:
 
-The application has been successfully deployed on an 8GB Mac Mini. Access the live demo here:
+The application has been successfully deployed on an 8GB Mac Mini. Access the deployed version here:
 https://mac-mini.boga-vector.ts.net/mistral
 
 Read more about how to deploy in this Medium Post: https://medium.com/@25mb.git/deploying-mistral-7b-on-a-budget-friendly-mac-mini-with-reverse-proxy-using-tailserver-6bae3cb69365
