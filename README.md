@@ -1,8 +1,9 @@
-# Improved version
+# Improved version - implementing RAG architecture
 This application improves on the problems of the forked version.
 (reported in https://github.com/SonicWarrior1/pdfchat/issues/7#issuecomment-2547580815)
 - **Multiple Users**: Each user session has its own workspace
 - **Multiple Files**: Multiple files can be uploaded
+- **Vector DB**: Uses FAISS DB properly to implement the RAG architecture 
 
 # Multiple Files, Multiple Users - PDF Chat Application with Mistral 7B LLM, LangChain, Ollama, FAISS DB, and Streamlit
 Enables users to interact with **Multiple** PDF documents using a locally deployed **Mistral 7B** language model. By leveraging **LangChain**, **FAISS** vector database, and **Retrieval-Augmented Generation (RAG)**, it efficiently retrieves relevant document content and provides contextually accurate responses grounded strictly within the uploaded PDFs.
