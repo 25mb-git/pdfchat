@@ -55,6 +55,18 @@ https://mac-mini.boga-vector.ts.net/mistral
 
 Read more about how to deploy in this Medium Post: https://medium.com/@25mb.git/deploying-mistral-7b-on-a-budget-friendly-mac-mini-with-reverse-proxy-using-tailserver-6bae3cb69365
 
+## Test Code
+1. **Run test code:**:
+   ```bash
+   pip install pytest
+    ```
+
+Make sure pytest is installed:
+
+2. **Run test code:**:
+   ```bash
+    pytest test_app.py
+    ```
 
 ## Technologies Used
 
