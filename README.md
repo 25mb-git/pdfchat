@@ -65,7 +65,7 @@ Make sure pytest is installed:
 
 2. **Run test code:**:
    ```bash
-    pytest test_app.py
+    pytest test/test_app.py
     ```
 
 ## Technologies Used
