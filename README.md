@@ -55,13 +55,23 @@ https://mac-mini.boga-vector.ts.net/mistral
 
 Read more about how to deploy in this Medium Post: https://medium.com/@25mb.git/deploying-mistral-7b-on-a-budget-friendly-mac-mini-with-reverse-proxy-using-tailserver-6bae3cb69365
 
+
 ## Test Code
+### Test cases
+
+1. setup_session: Ensures the files folder exists.
+2. pdf_bytes: Simulates a PDF file in memory using BytesIO.
+3. test_pdf_upload_and_storage: Verifies PDF uploads and file path creation.
+4. test_vector_store_creation: Tests the creation of the FAISS vector store with dummy PDFs.
+5. test_streamlit_ui_elements: Ensures session state is initialized.
+6. test_user_input_and_chat_flow: Simulates the full chat flow with user input and assistant responses.
+
+### Test execution
 1. **Run test code:**:
+Make sure pytest is installed:
    ```bash
    pip install pytest
     ```
-
-Make sure pytest is installed:
 
 2. **Run test code:**:
    ```bash
