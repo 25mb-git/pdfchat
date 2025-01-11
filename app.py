@@ -51,20 +51,29 @@ def show_banner(image_path, height="200px"):
     with open(image_path, "rb") as f:
         banner_base64 = base64.b64encode(f.read()).decode()
 
-    # Add CSS to reserve the space for the banner and push the content below
     st.markdown(f"""
         <style>
         .banner {{
             height: {height};
             background-image: url("data:image/png;base64,{banner_base64}");
             background-repeat: no-repeat;
-            background-size: 1000px 200px;
-
-            background-position: center;
+            background-size: 750px 150px;
+            background-position: center 40px;
             margin-bottom: 0px;
+            background-repeat: no-repeat;
+            position: fixed;  /* Keeps the banner at the top of the screen */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;  /* Ensure it stays on top of other elements */
         }}
         .main-content {{
-            margin-top: ;  /* Reserve space for the banner */
+            margin-top: calc({height} + 20px);  /* Push content below the sticky banner */
+            padding-top: 0px;
+        }}
+
+        .block-container {{
+            padding-top: 0px;  /* Remove default Streamlit padding */
         }}
         </style>
         <div class="banner"></div>
@@ -72,7 +81,7 @@ def show_banner(image_path, height="200px"):
     """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
-    st.set_page_config(page_title="PDF Chatbot with Multiple PDF Support", layout="wide")
+    st.set_page_config(page_title="PDF Chatbot with Multiple PDF Support")
     
     # Show the banner at the top
     show_banner('./art/banner.png')  # Add the path to your banner image
