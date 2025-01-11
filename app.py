@@ -47,38 +47,60 @@ def create_vector_store(files):
     return vector_store
 
 def show_banner(image_path, height="200px"):
-    """Display a banner image at the top of the app."""
+    """Display a responsive banner image at the top of the app."""
     with open(image_path, "rb") as f:
         banner_base64 = base64.b64encode(f.read()).decode()
 
     st.markdown(f"""
         <style>
+        .banner-container {{
+            width: 100%;
+            max-width: 900px;  /* Ensure banner doesn't extend beyond content */
+            margin: 0 auto;  /* Center the banner */
+            box-sizing: border-box;  /* Prevent overflow due to padding/margin */
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }}
         .banner {{
             height: {height};
             background-image: url("data:image/png;base64,{banner_base64}");
             background-repeat: no-repeat;
-            background-size: 750px 150px;
+            background-size: auto 80%;  /* Scale width automatically to fit height */
             background-position: center 40px;
-            margin-bottom: 0px;
-            background-repeat: no-repeat;
-            position: fixed;  /* Keeps the banner at the top of the screen */
-            top: 0;
-            left: 0;
             width: 100%;
-            z-index: 1000;  /* Ensure it stays on top of other elements */
         }}
         .main-content {{
-            margin-top: calc({height} + 20px);  /* Push content below the sticky banner */
+            margin-top: calc({height} + 10px);
             padding-top: 0px;
         }}
-
         .block-container {{
-            padding-top: 0px;  /* Remove default Streamlit padding */
+            padding-top: 0px;
+        }}
+        /* Handle smaller screens (e.g., iPhone Safari) */
+        @media (max-width: 600px) {{
+            .banner-container {{
+                max-width: 100%;  /* Full width on smaller screens */
+                padding-left: 10px;
+                padding-right: 10px;
+            }}
+            .banner {{
+                background-size: contain;  /* Fit the image without overflow */
+                height: 150px;  /* Adjust banner height for mobile */
+            }}
         }}
         </style>
-        <div class="banner"></div>
+        <div class="banner-container">
+            <div class="banner"></div>
+        </div>
         <div class="main-content">
     """, unsafe_allow_html=True)
+
+
 
 if __name__ == "__main__":
     st.set_page_config(page_title="PDF Chatbot with Multiple PDF Support")
