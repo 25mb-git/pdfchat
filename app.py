@@ -81,6 +81,13 @@ def show_banner(image_path, height="200px"):
         .block-container {{
             padding-top: 0px;
         }}
+
+        .github-link {{
+            font-size: 12px;  /* Smaller font for GitHub link */
+            text-align: left;
+            margin-top: 10px;
+            color: #666;  /* Gray color */
+        }}
         /* Handle smaller screens (e.g., iPhone Safari) */
         @media (max-width: 600px) {{
             .banner-container {{
@@ -123,6 +130,14 @@ if __name__ == "__main__":
         st.session_state.chat_history = []
 
     # st.title("📄 Chat with your PDF documents!")
+    st.markdown(
+        '<div class="github-link">'
+        'My Source code: <a href="https://github.com/25mb-git/pdf-chat" target="_blank">GitHub</a>'
+        '</div>',
+        unsafe_allow_html=True,
+    )
+
+    unsafe_allow_html=True,
     # st.write("Upload multiple PDF / exported eMail files, and the assistant will answer your questions based on their content.")
 
     # Upload multiple PDF files
