@@ -3,7 +3,7 @@ import pytest
 from streamlit.runtime.state import SessionState
 import streamlit as st
 from io import BytesIO
-from main_app import create_vector_store, _get_session
+from app import create_vector_store, _get_session
 
 FILE_FOLDER = './files'
 
