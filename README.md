@@ -36,16 +36,12 @@ This app enables you to upload email PDFs and interactively extract key details 
 3. **Semantic Search**: User queries trigger a semantic search within the vector database to locate the most relevant document passages.  
 4. **Contextual Response Generation**: The system integrates retrieved information with the Mistral 7B model to generate highly accurate responses.  
 
----
+# How to Deploy
 
-## Running Mistral 7B Locally with Ollama
-
-### For Mac Users
+### Before starting
 Follow the instructions to install Ollama here: [Ollama GitHub Repository](https://github.com/ollama/ollama).
 
----
-
-## Usage Instructions
+## Instructions
 
 1. **Clone this repository**:  
    ```bash
@@ -62,8 +58,8 @@ Follow the instructions to install Ollama here: [Ollama GitHub Repository](https
     streamlit run app.py
     ```
 
-## Test Code
-### Test cases
+# Tests
+## Test cases
 
 1. setup_session: Ensures the files folder exists.
 2. pdf_bytes: Simulates a PDF file in memory using BytesIO.
@@ -72,7 +68,7 @@ Follow the instructions to install Ollama here: [Ollama GitHub Repository](https
 5. test_streamlit_ui_elements: Ensures session state is initialized.
 6. test_user_input_and_chat_flow: Simulates the full chat flow with user input and assistant responses.
 
-### Test execution
+## Test execution
 1. **Run test code:**:
 Make sure pytest is installed:
    ```bash
@@ -84,7 +80,7 @@ Make sure pytest is installed:
     pytest test/test_app.py
     ```
 
-## Technologies Used
+# Technologies Used
 
 Mistral 7B: Lightweight, open-weight LLM optimized for local deployment.
 Ollama: Simplifies LLM model deployment and inference.
