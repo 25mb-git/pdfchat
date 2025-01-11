@@ -15,49 +15,11 @@ from langchain_community.vectorstores.faiss import FAISS
 
 FILE_FOLDER = './files'
 
-def footer_image(png_file):
-    bin_str = get_base64(png_file)
-    page_bg_img = '''
-    <style>
-    .stApp {
-    background-image: url("data:image/png;base64,%s");
-    background-repeat: no-repeat;
-    background-size: 1000px 200px;
-    background-position-x: center;
-    background-position-y: 50px;
-    }
-    </style>
-    <div>
-    <br><br><br><br><br><br>
-    </div>
-    ''' % bin_str
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-
 def footer():
     footer_html = """<div style='text-align: left;'>
       <p>Developed with ❤️ by Millie Bay at British School in Tokyo</p>
     </div>"""
     st.markdown(footer_html, unsafe_allow_html=True)
-
-def get_base64(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-def set_background(png_file):
-    bin_str = get_base64(png_file)
-    page_bg_img = '''
-    <style>
-    .stApp {
-    background-image: url("data:image/png;base64,%s");
-    background-repeat: no-repeat;
-    background-position: right 40px;
-    }
-    </style>
-    ''' % bin_str
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-
-
 def _get_session():
     """Create a unique session folder to save uploaded files."""
     if 'session_id' not in st.session_state:
@@ -84,15 +46,36 @@ def create_vector_store(files):
     vector_store = FAISS.from_documents(texts, embeddings)
     return vector_store
 
-def background_image():
-    set_background('./art/bot.png')
-    footer_image('./art/christmas.png')
+def show_banner(image_path, height="200px"):
+    """Display a banner image at the top of the app."""
+    with open(image_path, "rb") as f:
+        banner_base64 = base64.b64encode(f.read()).decode()
+
+    # Add CSS to reserve the space for the banner and push the content below
+    st.markdown(f"""
+        <style>
+        .banner {{
+            height: {height};
+            background-image: url("data:image/png;base64,{banner_base64}");
+            background-repeat: no-repeat;
+            background-size: 1000px 200px;
+
+            background-position: center;
+            margin-bottom: 0px;
+        }}
+        .main-content {{
+            margin-top: ;  /* Reserve space for the banner */
+        }}
+        </style>
+        <div class="banner"></div>
+        <div class="main-content">
+    """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     st.set_page_config(page_title="PDF Chatbot with Multiple PDF Support", layout="wide")
     
-    # Background image
-    background_image()
+    # Show the banner at the top
+    show_banner('./art/banner.png')  # Add the path to your banner image
 
     # Session folder for storing PDF uploads
     session_folder = _get_session()
@@ -173,3 +156,6 @@ if __name__ == "__main__":
 
     else:
         st.warning("Please upload PDF files to start chatting!")
+
+    # Close the reserved space for the banner
+    st.markdown("</div>", unsafe_allow_html=True)
