@@ -1,14 +1,28 @@
-# Proper RAG architecture
+# Contributions
 This application improves on the problems of the forked version.
 (reported in https://github.com/SonicWarrior1/pdfchat/issues/7#issuecomment-2547580815)
-- **Vector DB**: Uses FAISS DB properly to implement the RAG architecture 
+
+ ```markdown
+    **Significantly reworked** the forked version to properly support **Retrieval-Augmented Generation (RAG)**.
+ ```
+
+Successfully deployed on a 8GB Mac Mini. Access the deployed version here: https://mac-mini.boga-vector.ts.net/mistral
+
+Read more about how to deploy in this [Medium Post](https://medium.com/@25mb.git/deploying-mistral-7b-on-a-budget-friendly-mac-mini-with-reverse-proxy-using-tailserver-6bae3cb69365).
+
+
+# What has changed
+- **Retrieval-Augmented Generation (RAG) architecture**: to select documents
+- **Vector Store**: Uses FAISS DB properly to implement the RAG architecture 
 - **Multiple Users**: Each user session has its own workspace
 - **Multiple Files**: Multiple files can be uploaded
 
-# Multiple Files, Multiple Users - PDF Chat Application with Mistral 7B LLM, LangChain, Ollama, FAISS DB, and Streamlit
-Enables users to interact with **Multiple** PDF documents using a locally deployed **Mistral 7B** language model. By leveraging **LangChain**, **FAISS** vector database, and **Retrieval-Augmented Generation (RAG)**, it efficiently retrieves relevant document content and provides contextually accurate responses grounded strictly within the uploaded PDFs.
-
 The system supports the ingestion of multiple documents, and each browser reload initiates a **private session**, ensuring that users can interact exclusively with their specific uploaded documents.
+
+# Use Case: Retrieve Important Information from Email PDFs
+This app enables you to upload email PDFs and interactively extract key details such as sender information, dates, attachments, and discussion points. Whether you're summarizing meeting notes, tracking follow-ups, or searching for approvals, the app leverages Retrieval-Augmented Generation (RAG) to provide precise, context-aware answers from one or multiple email threads. 
+
+❤️ I am using this to find the discounts promotions in my inbox ❤️ 
 
 ## Key Features
 - **FAISS Vector Database**: Enables fast and efficient semantic search for document content.  
@@ -47,14 +61,6 @@ Follow the instructions to install Ollama here: [Ollama GitHub Repository](https
    ```bash
     streamlit run app.py
     ```
-
-## Demo:
-
-The application has been successfully deployed on an 8GB Mac Mini. Access the deployed version here:
-https://mac-mini.boga-vector.ts.net/mistral
-
-Read more about how to deploy in this Medium Post: https://medium.com/@25mb.git/deploying-mistral-7b-on-a-budget-friendly-mac-mini-with-reverse-proxy-using-tailserver-6bae3cb69365
-
 
 ## Test Code
 ### Test cases
