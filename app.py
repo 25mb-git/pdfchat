@@ -48,6 +48,10 @@ def create_vector_store(files):
 
 def show_banner(image_path, height="200px"):
     """Display a responsive banner image at the top of the app."""
+    if not os.path.exists(image_path):
+        st.warning("Banner image not found. Please check the path.")
+        return
+
     with open(image_path, "rb") as f:
         banner_base64 = base64.b64encode(f.read()).decode()
 
@@ -55,13 +59,11 @@ def show_banner(image_path, height="200px"):
         <style>
         .banner-container {{
             width: 100%;
-            max-width: 900px;  /* Ensure banner doesn't extend beyond content */
-            margin: 0 auto;  /* Center the banner */
-            box-sizing: border-box;  /* Prevent overflow due to padding/margin */
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             position: fixed;
-            top: 0;
+            top: 10px;  /* Lower the banner by 10px from the top */
             left: 0;
             right: 0;
             z-index: 1000;
@@ -70,34 +72,26 @@ def show_banner(image_path, height="200px"):
             height: {height};
             background-image: url("data:image/png;base64,{banner_base64}");
             background-repeat: no-repeat;
-            background-size: auto 80%;  /* Scale width automatically to fit height */
-            background-position: center 40px;
-            width: 100%;
+            background-size: 100% auto;  /* Ensures full width scaling without cutting */
+            background-position: center;
+            width: 100vw;  /* Use full viewport width */
         }}
         .main-content {{
-            margin-top: calc({height} + 10px);
-            padding-top: 0px;
+            margin-top: calc({height} + 20px);  /* Adjust for the new top position with extra margin */
+            padding-top: 0;
         }}
         .block-container {{
-            padding-top: 0px;
+            padding-top: 0 !important;  /* Remove extra padding added by Streamlit */
         }}
 
-        .github-link {{
-            font-size: 12px;  /* Smaller font for GitHub link */
-            text-align: left;
-            margin-top: 10px;
-            color: #666;  /* Gray color */
-        }}
-        /* Handle smaller screens (e.g., iPhone Safari) */
         @media (max-width: 600px) {{
-            .banner-container {{
-                max-width: 100%;  /* Full width on smaller screens */
-                padding-left: 10px;
-                padding-right: 10px;
-            }}
             .banner {{
-                background-size: contain;  /* Fit the image without overflow */
-                height: 150px;  /* Adjust banner height for mobile */
+                background-size: contain;  /* Scale down for smaller screens */
+                height: 150px;  /* Smaller height for mobile */
+                width: 100%;  /* Maintain full width on mobile */
+            }}
+            .main-content {{
+                margin-top: 170px;  /* Adjust main content margin for smaller screens */
             }}
         }}
         </style>
