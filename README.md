@@ -89,8 +89,8 @@ Make sure pytest is installed:
 
 # Technologies Used
 
-Mistral 7B: Lightweight, open-weight LLM optimized for local deployment.
-Ollama: Simplifies LLM model deployment and inference.
-LangChain: Facilitates seamless integration of LLMs and external tools.
-FAISS: High-performance vector database for semantic search.
-Streamlit: User-friendly framework for creating interactive web applications.
+- Mistral 7B: Lightweight, open-weight LLM optimized for local deployment.
+- Ollama: Simplifies LLM model deployment and inference.
+- LangChain: Facilitates seamless integration of LLMs and external tools.
+- FAISS: High-performance vector database for semantic search.
+- Streamlit: User-friendly framework for creating interactive web applications.
