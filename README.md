@@ -43,7 +43,7 @@ Follow the instructions to install Ollama here: [Ollama GitHub Repository](https
    ```bash
     ollama run mistral
     ```
-
+After installing Mistral
 ## Instructions
 
 1. **Clone this repository**:  
