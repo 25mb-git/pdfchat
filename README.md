@@ -40,7 +40,9 @@ This app enables you to upload email PDFs and interactively extract key details 
 
 ### Before starting
 Follow the instructions to install Ollama here: [Ollama GitHub Repository](https://github.com/ollama/ollama).
-
+   ```bash
+    ollama run mistral
+    ```
 ## Instructions
 
 1. **Clone this repository**:  
