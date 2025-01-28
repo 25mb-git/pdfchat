@@ -6,7 +6,7 @@ This application improves on the problems of the forked version.
     Significantly reworked the forked version to properly support Retrieval-Augmented Generation (RAG).
  ```
 
-Successfully deployed on a 8GB Mac Mini. Access the deployed version here: https://mac-mini.boga-vector.ts.net/mistral
+Deployed on a 8GB Mac Mini. Access here: https://mac-mini.boga-vector.ts.net/mistral
 
 Read more about how to **deploy and host** this on a budget friendly Mac [Medium Post](https://medium.com/@25mb.git/deploying-mistral-7b-on-a-budget-friendly-mac-mini-with-reverse-proxy-using-tailserver-6bae3cb69365).
 
