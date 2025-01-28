@@ -1,5 +1,5 @@
 # Contributions
-This application improves on the problems of the forked version.
+This application solves the problems of the forked version.
 (reported in https://github.com/SonicWarrior1/pdfchat/issues/7#issuecomment-2547580815)
 
  ```markdown
